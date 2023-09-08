@@ -1,0 +1,31 @@
+package Q2;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+
+public class FileReaderPro{
+	
+	public static void main(String[] args) throws IOException{
+		
+
+		String str="";
+		BufferedReader br=new BufferedReader(new FileReader("abc.txt"));
+		String line=br.readLine();
+		
+		while(line!=null) {
+			str+=line;
+			line=br.readLine();
+		}
+		String temp="";
+		for(int i=0;i<str.length();i++) {
+			if(str.charAt(i)!=',') {
+				temp+=str.charAt(i);
+			}
+		}
+		System.out.println(temp);
+	}
+	
+	
+
+}

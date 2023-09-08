@@ -1,0 +1,40 @@
+package Q2;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+
+public class FileReaderPro{
+	
+	public static void main(String[] args) throws IOException{
+		
+
+		String str="";
+		BufferedReader br=new BufferedReader(new FileReader("abc.txt"));
+		String line=br.readLine();
+		
+		while(line!=null) {
+			str+=line;
+			line=br.readLine();
+		}
+		String temp="";
+		for(int i=0;i<str.length();i++) {
+			if(str.charAt(i)!=',') {
+				temp+=str.charAt(i);
+			}
+		}
+		int intValue = Integer.parseInt(temp);
+		int sum=0;
+		int i=0;
+		int x=10;
+		while(temp.length()!=i) {
+			sum+=intValue%x;
+			intValue=intValue/10;
+			i++;
+		}
+		System.out.println(sum);
+	}
+	
+	
+
+}

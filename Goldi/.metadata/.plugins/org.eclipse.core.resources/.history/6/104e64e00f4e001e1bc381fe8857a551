@@ -1,0 +1,9 @@
+package Q2;
+
+import java.io.BufferedReader;
+
+public class FileReaderPro {
+	
+	BufferedReader br=new BufferedReader(new FileReader(null))
+
+}

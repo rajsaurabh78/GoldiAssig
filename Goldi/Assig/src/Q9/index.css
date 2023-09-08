@@ -1,0 +1,11 @@
+form{
+    border: 1px solid black;
+    display: grid;
+    width: 400px;
+    margin: auto;
+}
+body{
+    border: 2px solid gray;
+    border-radius: 50px;
+    background-color: rgb(99, 94, 94);
+}

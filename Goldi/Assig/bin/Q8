@@ -1,0 +1,4 @@
+
+Q8. Write a SQL query to find the age is less than 30 and name start with S
+
+Ans :-  select * from table where age>30 and name LIKE 'S%';

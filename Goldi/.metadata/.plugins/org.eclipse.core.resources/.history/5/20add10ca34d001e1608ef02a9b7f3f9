@@ -1,0 +1,98 @@
+Ans1 :-
+
+
+
+public class Main{
+    public static void main(String[] args){
+        String x="123";
+        check(x);
+    }
+    public static void check(String x){
+        int N = Integer.parseInt(x);
+        String temp="";
+        while(N>0){
+            temp+=N%2;
+            N=N/2;
+        }
+        String res="";
+        for(int i=temp.length()-1;i>=0;i--){
+            res+=temp.charAt(i);
+        }
+        
+        System.out.println(res);
+    }
+
+}
+
+
+Ans3 :-
+
+
+
+        Connection conn=null;
+		
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		  String url="jdbc:mysql://localhost:3306/test";
+		  try {
+			conn =DriverManager.getConnection(url,"root","root");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	
+			try (conn) {
+			PreparedStatement ps=conn.prepareStatement("select * from test");
+			ResultSet rs=ps.executeQuery();
+			while(rs.next()) {
+				String name = rs.getString("name");
+                int age = rs.getInt("age");
+                System.out.println("Name : "+name+" Age : "+age);
+                System.out.println("===========================================");
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+	}
+
+
+Ans5 :-
+
+
+
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        Map<String,Integer> map=new HashMap<>();
+        map.put("Ram",32);
+        map.put("Shyam",60);
+        map.put("Raman",30);
+        map.put("Rohit",35);
+        map.put("Ramu",24);
+        map.put("Surabhi",16);
+        
+        
+        
+        int res=Search("Rama",map);
+        if(res<0){
+            System.out.println("Not present in map.");
+        }else{
+            System.out.println(res);
+        }
+        
+    }
+    public static int Search(String str,Map<String,Integer> map){
+        if(map.containsKey(str)){
+            return map.get(str);
+        }
+        else return -1;
+    }
+    
+}
+
+
+Ans 7:- select * from table where age>30 and name LIKE 'S%';
